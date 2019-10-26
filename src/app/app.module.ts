@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserModule } from 'src/user/user.module';
+import { UserModule } from 'src/app/user/user.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { UserModule } from 'src/user/user.module';
     AppRoutingModule,
     UserModule,
 
-    StoreModule.forRoot({})
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [],
   bootstrap: [AppComponent]
