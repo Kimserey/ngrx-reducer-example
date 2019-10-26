@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { EffectsModule } from '@ngrx/effects';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 
@@ -15,7 +16,8 @@ import { UserComponent } from './user.component';
     CommonModule,
     UserRoutingModule,
 
-    StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducers)
+    StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducers),
+    EffectsModule.forFeature([])
   ],
   providers: []
 })
